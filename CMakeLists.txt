@@ -12,7 +12,7 @@ file(GLOB TESTS "test/*.cpp")
 
 add_library(src_lib ${SOURCES})
 
-add_executable(test_exe ${TESTS})
-target_link_libraries(test_exe PRIVATE src_lib Catch2::Catch2WithMain)
+add_executable(unit_tests_bin ${TESTS})
+target_link_libraries(unit_tests_bin PRIVATE src_lib Catch2::Catch2WithMain)
 enable_testing()
-add_test(NAME test COMMAND test_exe)
+add_test(NAME test COMMAND unit_tests_bin)
